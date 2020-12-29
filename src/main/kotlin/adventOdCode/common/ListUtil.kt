@@ -1,0 +1,3 @@
+package adventOdCode.common
+
+
