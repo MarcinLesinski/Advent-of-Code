@@ -6,6 +6,7 @@ import adventOdCode.domain.asNumbers
 import adventOdCode.domain.solve
 import adventOdCode.puzzles.Day01Part1
 import adventOdCode.puzzles.Day01Part2
+import adventOdCode.puzzles.Day02Part1
 import com.xenomachina.argparser.ArgParser
 import com.xenomachina.argparser.mainBody
 import java.lang.reflect.Modifier
@@ -34,6 +35,7 @@ fun getTopLevelFunctionFromFile(fileName: String, funcName: String): KFunction<*
 }
 
 @SuppressWarnings("unused")
+//TODO: @Day(1, 1)
 fun day1_1() {
     val input = readInput(1).asNumbers()
 
@@ -46,7 +48,16 @@ fun day1_1() {
 fun day1_2() {
     val input = readInput(1).asNumbers()
 
-    solve(1, 1) {
+    solve(1, 2) {
         Day01Part2(input)
+    }
+}
+
+@SuppressWarnings("unused")
+fun day2_1() {
+    val input = readInput(2)
+
+    solve(2, 1) {
+        Day02Part1(input)
     }
 }
