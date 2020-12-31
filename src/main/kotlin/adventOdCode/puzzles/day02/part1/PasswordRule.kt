@@ -1,4 +1,4 @@
-package adventOdCode.puzzles.day02
+package adventOdCode.puzzles.day02.part1
 
 data class Occurrence(
     val atLeast: Int,

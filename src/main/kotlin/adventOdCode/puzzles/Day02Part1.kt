@@ -2,12 +2,12 @@ package adventOdCode.puzzles
 
 import adventOdCode.domain.Lines
 import adventOdCode.domain.Puzzle
-import adventOdCode.puzzles.day02.InputParser
-import adventOdCode.puzzles.day02.PasswordRule
+import adventOdCode.puzzles.day02.part1.InputParser
+import adventOdCode.puzzles.day02.part1.PasswordRule
 
 class Day02Part1(input: Lines): Puzzle<Lines, Int>(input) {
     override fun solve(): Int {
-        return input.map{InputParser.parse(it)}.filter{ isPasswordValid(it) }.count()
+        return input.map{ InputParser.parse(it)}.filter{ isPasswordValid(it) }.count()
     }
 
     companion object{
