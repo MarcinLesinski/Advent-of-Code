@@ -4,10 +4,7 @@ import adventOdCode.application.ProgramArguments
 import adventOdCode.common.readInput
 import adventOdCode.domain.asNumbers
 import adventOdCode.domain.solve
-import adventOdCode.puzzles.Day01Part1
-import adventOdCode.puzzles.Day01Part2
-import adventOdCode.puzzles.Day02Part1
-import adventOdCode.puzzles.Day02Part2
+import adventOdCode.puzzles.*
 import com.xenomachina.argparser.ArgParser
 import com.xenomachina.argparser.mainBody
 import java.lang.reflect.Modifier
@@ -67,7 +64,25 @@ fun day2_1() {
 fun day2_2() {
     val input = readInput(2)
 
-    solve(2, 2){
+    solve(2, 2) {
         Day02Part2(input)
+    }
+}
+
+@SuppressWarnings("unused")
+fun day3_1() {
+    val input = readInput(3)
+
+    solve(3, 1) {
+        Day03Part1(input)
+    }
+}
+
+@SuppressWarnings("unused")
+fun day3_2() {
+    val input = readInput(3)
+
+    solve(3, 2) {
+        Day03Part2(input)
     }
 }
