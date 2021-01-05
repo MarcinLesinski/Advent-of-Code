@@ -7,7 +7,7 @@ import java.math.BigInteger
 typealias Input<T> = List<T>
 typealias Lines = Input<String>
 typealias Numbers = Input<Int>
-typealias RawInput = Lines
+typealias RawInput = String
 typealias BitMask = List<Array<Boolean>>
 
 fun Numbers.multiply(): BigInteger {
@@ -45,11 +45,11 @@ fun <T> Input<T>.forEachSubset(subsetLength: Int, onSubset: (subset: List<T>) ->
     step(0, subsetLength)
 }
 
-fun RawInput.asNumbers(): Numbers {
+fun Lines.asNumbers(): Numbers {
     return this.map { it.toInt() }
 }
 
-fun RawInput.asBitMask(set: Char, unset: Char): BitMask {
+fun Lines.asBitMask(set: Char, unset: Char): BitMask {
     return this.map { line ->
         line.map { char ->
             when (char) {

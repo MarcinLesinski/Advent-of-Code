@@ -1,6 +1,6 @@
 package adventOdCode.common
 
-import adventOdCode.domain.RawInput
+import adventOdCode.domain.Lines
 import java.io.File
 
 class DataReader {
@@ -13,12 +13,22 @@ class DataReader {
             return readData(fileName)
         }
 
-        private fun readData(fileName: String): List<String> {
+        fun readRawData(day: Int): String{
+            val fileName = "/day$day.data"
+            return readRawData(fileName)
+        }
+
+        fun readData(fileName: String): List<String> {
             val absoluteFileName = object {}.javaClass.getResource(fileName).file
-            return File(absoluteFileName).useLines { it.filter{!it.isEmpty()}.toList() }
+            return File(absoluteFileName).useLines { it.filter{ it.isNotEmpty() }.toList() }
+        }
+
+        fun readRawData(fileName: String): String {
+            val absoluteFileName = object {}.javaClass.getResource(fileName).file
+            return File(absoluteFileName).readText()
         }
     }
 }
 
-fun readInput(day: Int): RawInput = DataReader.readData(day)
-
+fun readInput(day: Int): Lines = DataReader.readData(day)
+fun readRawInput(day: Int): String = DataReader.readRawData(day)
