@@ -104,3 +104,21 @@ fun day4_2() {
         Day04Part2(input)
     }
 }
+
+@SuppressWarnings("unused")
+fun day5_1() {
+    val input = readInput(5)
+
+    solve(5, 1) {
+        Day05Part1(input)
+    }
+}
+
+@SuppressWarnings("unused")
+fun day5_2() {
+    val input = readInput(5)
+
+    solve(5, 2) {
+        Day05Part2(input)
+    }
+}
