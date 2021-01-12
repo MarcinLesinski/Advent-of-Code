@@ -45,6 +45,21 @@ fun <T> Input<T>.forEachSubset(subsetLength: Int, onSubset: (subset: List<T>) ->
     step(0, subsetLength)
 }
 
+fun <T> Input<T>.splitBy(selector: (T) -> Boolean): Array<List<T>> {
+    val result = mutableListOf(mutableListOf<T>())
+    val emptyGroup = {mutableListOf<T>()}
+
+    fold(result) { groups, item ->
+        if (selector(item))
+            groups.add(emptyGroup())
+        else
+            groups.last().add(item)
+        groups
+    }
+
+    return result.toTypedArray()
+}
+
 fun Lines.asNumbers(): Numbers {
     return this.map { it.toInt() }
 }

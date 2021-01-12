@@ -18,9 +18,10 @@ class DataReader {
             return readRawData(fileName)
         }
 
+        //TODO: fix - fileName works only if starts with "/"
         fun readData(fileName: String): List<String> {
             val absoluteFileName = object {}.javaClass.getResource(fileName).file
-            return File(absoluteFileName).useLines { it.filter{ it.isNotEmpty() }.toList() }
+            return File(absoluteFileName).useLines { it.toList() }
         }
 
         fun readRawData(fileName: String): String {
