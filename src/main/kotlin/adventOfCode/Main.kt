@@ -1,6 +1,10 @@
 package adventOfCode
 
 import adventOfCode.application.ProgramArguments
+import adventOfCode.application.printProgramInputError
+import adventOfCode.common.exceptionsUtil.Failure
+import adventOfCode.common.exceptionsUtil.Success
+import adventOfCode.common.exceptionsUtil.Try
 import adventOfCode.common.readInput
 import adventOfCode.common.readRawInput
 import adventOfCode.domain.*
@@ -22,10 +26,14 @@ fun main(args: Array<String>) {
             val part = part.toInt()
 
             val input = readRawInput(day)
-            val puzzle: Puzzle<Any> = getPuzzleCtor(day, part).call( input) as Puzzle<Any>
 
-            solve(day, part) {
-                puzzle
+            val puzzle: Try<Puzzle<Any>> = Try{getPuzzleCtor(day, part).call(input) as Puzzle<Any>}
+
+            when(puzzle){
+                is Success -> solve(day, part) {
+                    puzzle.get()
+                }
+                is Failure -> printProgramInputError(day, part, puzzle.error)
             }
         }
     }
