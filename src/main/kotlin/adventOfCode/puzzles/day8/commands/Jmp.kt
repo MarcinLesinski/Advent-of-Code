@@ -1,7 +1,7 @@
 package adventOfCode.puzzles.day8.commands
 
 internal class Jmp(
-    private val value: Int
+    override val value: Int
 ): Command {
     override fun execute(iterationInspector: IterationInspector){
         iterationInspector.nextCommandIndex += value
