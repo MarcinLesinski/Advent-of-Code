@@ -7,6 +7,7 @@ import java.math.BigInteger
 typealias Input<T> = List<T>
 typealias Lines = Input<String>
 typealias Numbers = Input<Int>
+typealias PositiveNumbers = Input<Long>
 typealias RawInput = String
 typealias BitMask = List<Array<Boolean>>
 
@@ -32,12 +33,19 @@ fun Numbers.multiply(): BigInteger {
     return result
 }
 
+//region Input<T>
 fun <T> Input<T>.forEachPair(onPair: (T, T) -> Unit) {
-    for (i in 0 until this.size) {
+    for (i in this.indices) {
         for (j in i + 1 until this.size) {
             onPair(this[i], this[j])
         }
     }
+}
+
+fun <T> Input<T>.pairs(): List<List<T>>{
+    val result = mutableListOf<List<T>>()
+    forEachPair{ a, b -> result.add(listOf(a, b)) }
+    return result
 }
 
 fun <T> Input<T>.forEachSubset(subsetLength: Int, onSubset: (subset: List<T>) -> Unit) {
@@ -75,6 +83,8 @@ fun <T> Input<T>.splitBy(selector: (T) -> Boolean): Array<List<T>> {
 
     return result.toTypedArray()
 }
+
+//endregion
 
 fun Lines.asNumbers(): Numbers {
     return this.map { it.toInt() }

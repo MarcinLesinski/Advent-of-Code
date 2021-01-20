@@ -21,15 +21,7 @@ val <T> Matrix<T>.width: Int
             0
     }
 
-operator fun <T> Matrix<T>.get(x: Int, y: Int): T{
-    try {
-        var cos = this[y][x]
-    }
-    catch(e: Exception){
-        println("Wypierdoliło w klurwę")
-    }
-    return this[y][x]
-}
+operator fun <T> Matrix<T>.get(x: Int, y: Int): T = this[y][x]
 
 fun <T> Matrix<T>.toText(): String{
     var result = ""
