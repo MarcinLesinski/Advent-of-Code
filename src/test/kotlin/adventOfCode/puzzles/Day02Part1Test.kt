@@ -1,7 +1,8 @@
 package adventOfCode.puzzles
 
 
-import adventOfCode.puzzles.day02.part1.InputParser
+import adventOfCode.puzzles.year2020.day02.part1.InputParser
+import adventOfCode.puzzles.year2020.Day02Part1
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest

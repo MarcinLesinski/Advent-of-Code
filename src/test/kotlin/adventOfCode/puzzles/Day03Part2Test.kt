@@ -6,9 +6,9 @@ import adventOfCode.common.Matrix
 import adventOfCode.common.multiplyBy
 import adventOfCode.domain.BitMask
 import adventOfCode.domain.asBitMask
-import adventOfCode.puzzles.day3.Ride
-import adventOfCode.puzzles.day3.Slope
-import adventOfCode.puzzles.day3.Trail
+import adventOfCode.puzzles.year2020.day3.Ride
+import adventOfCode.puzzles.year2020.day3.Slope
+import adventOfCode.puzzles.year2020.day3.Trail
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

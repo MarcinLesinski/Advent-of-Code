@@ -1,8 +1,7 @@
 package adventOfCode.puzzles.day09
 
 import adventOfCode.common.DataReader
-import adventOfCode.puzzles.day9.Part2
-import jdk.nashorn.internal.ir.annotations.Ignore
+import adventOfCode.puzzles.year2020.day9.Part2
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

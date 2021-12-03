@@ -2,7 +2,7 @@ package adventOfCode.puzzles
 
 
 import adventOfCode.common.DataReader
-import adventOfCode.puzzles.day4.PassportsReader
+import adventOfCode.puzzles.year2020.day4.PassportsReader
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

@@ -1,6 +1,7 @@
 package adventOfCode.puzzles
 
 import adventOfCode.common.DataReader
+import adventOfCode.puzzles.year2020.Day07Part1
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

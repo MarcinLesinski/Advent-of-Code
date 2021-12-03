@@ -1,7 +1,7 @@
 package adventOfCode.puzzles
 
-import adventOfCode.puzzles.day5.common.SeatDecoder
-import adventOfCode.puzzles.day5.common.parseInput
+import adventOfCode.puzzles.year2020.day5.common.SeatDecoder
+import adventOfCode.puzzles.year2020.day5.common.parseInput
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
