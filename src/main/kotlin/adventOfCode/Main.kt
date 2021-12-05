@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
             val part = part.toInt()
             val year = year.toInt()
 
-            val input = readRawInput(day)
+            val input = readRawInput(year, day)
 
             val puzzle: Try<Puzzle<Any>> = Try { getPuzzleCtor(year, day, part).call(input) as Puzzle<Any> }
 

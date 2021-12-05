@@ -17,10 +17,10 @@ class PassportsReader {
 
     private fun prepareBundles(input: String): Bundles{
         val rawBundles: List<String> = input
-            .split("\r\n\r\n")
+            .split(newLine(2))
 
         val singleLineBundles: List<String> = rawBundles
-            .map { it.replace("\r\n", " ") }
+            .map { it.replace(newLine(), " ") }
 
         val bundlesOfLines: List<List<String>> = singleLineBundles
             .map { it.split(" ") }
@@ -34,4 +34,6 @@ class PassportsReader {
 
         return bundlesOfPairs
     }
+
+    private fun newLine(count: Int = 1): String = System.lineSeparator().repeat(count)
 }

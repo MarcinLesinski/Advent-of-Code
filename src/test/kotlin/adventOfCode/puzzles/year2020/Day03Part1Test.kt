@@ -1,4 +1,4 @@
-package adventOfCode.puzzles
+package adventOfCode.puzzles.year2020
 
 
 import adventOfCode.common.DataReader
@@ -24,7 +24,7 @@ internal class Day03Part1Test {
 
     @BeforeAll
     fun beforeAll(){
-        val input: BitMask = DataReader.readData(3).asBitMask('#', '.')
+        val input: BitMask = DataReader.readData(2020,3).asBitMask('#', '.')
         val matrix = Matrix<Boolean>(input.size) { input[it] }
         slope = Slope(matrix)
     }

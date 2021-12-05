@@ -1,4 +1,4 @@
-package adventOfCode.puzzles
+package adventOfCode.puzzles.year2020
 
 import adventOfCode.puzzles.year2020.day5.common.SeatDecoder
 import adventOfCode.puzzles.year2020.day5.common.parseInput

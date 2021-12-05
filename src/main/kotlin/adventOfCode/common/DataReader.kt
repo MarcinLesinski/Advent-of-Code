@@ -8,13 +8,13 @@ class DataReader {
         fun readDataAsIntegers(fileName: String): List<Int> = readData(fileName).map { it.toInt() }
 
 
-        fun readData(day: Int): List<String>{
-            val fileName = "/day$day.data"
+        fun readData(year: Int, day: Int): List<String>{
+            val fileName = "/year$year/day$day.data"
             return readData(fileName)
         }
 
-        fun readRawData(day: Int): String{
-            val fileName = "/day$day.data"
+        fun readRawData(year: Int, day: Int): String{
+            val fileName = "/year$year/day$day.data"
             return readRawData(fileName)
         }
 
@@ -32,5 +32,5 @@ class DataReader {
     }
 }
 
-fun readInput(day: Int): Lines = DataReader.readData(day)
-fun readRawInput(day: Int): String = DataReader.readRawData(day)
+fun readInput(year: Int, day: Int): Lines = DataReader.readData(year, day)
+fun readRawInput(year: Int, day: Int): String = DataReader.readRawData(year, day)

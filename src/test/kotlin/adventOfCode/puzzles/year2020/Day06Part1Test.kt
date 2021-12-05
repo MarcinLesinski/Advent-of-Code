@@ -1,4 +1,4 @@
-package adventOfCode.puzzles
+package adventOfCode.puzzles.year2020
 
 import adventOfCode.common.DataReader
 import adventOfCode.puzzles.year2020.Day06Part1
@@ -9,7 +9,7 @@ class Day06Part1Test {
 
     @Test
     fun example(){
-        val lines = DataReader.readRawData("day6_sample.data")
+        val lines = DataReader.readRawData("year2020/day6_sample.data")
         val actual = Day06Part1(lines).solve()
 
         assertEquals(11, actual )
