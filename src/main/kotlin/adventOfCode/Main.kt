@@ -26,10 +26,11 @@ fun main(args: Array<String>) {
 
             val input = readRawInput(year, day)
 
+            @Suppress("UNCHECKED_CAST")
             val puzzle: Try<Puzzle<Any>> = Try { getPuzzleCtor(year, day, part).call(input) as Puzzle<Any> }
 
             when (puzzle) {
-                is Success -> solve(day, part) {
+                is Success -> solve(year, day, part) {
                     puzzle.get()
                 }
                 is Failure -> printProgramInputError(year, day, part, puzzle.error)

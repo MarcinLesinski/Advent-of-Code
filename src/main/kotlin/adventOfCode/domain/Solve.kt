@@ -4,7 +4,7 @@ import kotlin.system.measureNanoTime
 import com.importre.crayon.*
 import java.text.SimpleDateFormat
 
-fun <TResult: Any> solve(day: Int, part: Int, block: () -> Puzzle<TResult>) {
+fun <TResult: Any> solve(year: Int, day: Int, part: Int, block: () -> Puzzle<TResult>) {
     var result: TResult? = null
 
     val executionTimeInNanoSeconds = measureNanoTime {
@@ -12,13 +12,13 @@ fun <TResult: Any> solve(day: Int, part: Int, block: () -> Puzzle<TResult>) {
     }
 
     result?.let{
-        printReport(day, part, it, executionTimeInNanoSeconds)
+        printReport(year, day, part, it, executionTimeInNanoSeconds)
     }
 
 }
 
-private fun printReport(day: Int, part: Int, result: Any, executionTimeInNanoSeconds: Long){
-    val yearText = "2020".underline()
+private fun printReport(year: Int, day: Int, part: Int, result: Any, executionTimeInNanoSeconds: Long){
+    val yearText = year.toString().underline()
     val dayText = day.toString().bold()
     val partText = part.toString().bold()
     val executionTimeText = SimpleDateFormat("mm:ss:SSS" ).format(executionTimeInNanoSeconds / 1000000f)
