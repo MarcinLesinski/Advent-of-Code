@@ -5,7 +5,8 @@ import java.math.BigInteger
 
 
 typealias Input<T> = List<T>
-typealias Lines = Input<String>
+typealias Lines = Input<Line>
+typealias Line = String
 typealias Numbers = Input<Int>
 typealias PositiveNumbers = Input<Long>
 typealias RawInput = String
@@ -19,7 +20,7 @@ fun RawInput.asNumbers(): Numbers{
         .asNumbers()
 }
 
-fun RawInput.asLines(): List<String>{
+fun RawInput.asLines(): Lines{
     return this
         .trim()
         .lines()
@@ -107,6 +108,8 @@ fun Lines.asBitMask(set: Char, unset: Char): BitMask {
         }.toTypedArray()
     }
 }
+
+fun Line.split(): List<String> = this.split(Regex("[ \t]+"))
 
 fun BitMask.height(): Int{
     return this[0].size
