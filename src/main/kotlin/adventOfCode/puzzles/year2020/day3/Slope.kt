@@ -16,15 +16,12 @@ class Slope(
 
     override fun toString(): String {
         var result = ""
-        for (y in pattern.indices){
-            for(x in pattern[y].indices ){
-//                result +=  pattern[i, j].toString()
-                result += "[$y $x-"
-                result += if (pattern[x, y])
-                    "x" else "O"
-                result += "]"
-            }
+        pattern.indices{ x, y ->
+            result += "[$y $x-"
+            result += if (pattern[x, y])
+                "x" else "O"
+            result += "]"
         }
-            return result
+        return result
     }
 }
