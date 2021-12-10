@@ -1,7 +1,5 @@
 package adventOfCode.common
 
-import java.util.stream.Collectors
-
 class Matrix<T>(
     val width: Int,
     val height: Int,
@@ -22,6 +20,14 @@ class Matrix<T>(
 
     fun forEachField(block: (T) -> Unit) {
         rows.flatten().forEach(block)
+    }
+
+    fun forEachFieldWithCoords(block: (data:T, col: Int, row: Int) -> Unit) {
+        rows.forEachIndexed{ row, rowData ->
+            rowData.forEachIndexed{col, data ->
+                block(data, col, row)
+            }
+        }
     }
 
     fun fields() = rows.flatten()

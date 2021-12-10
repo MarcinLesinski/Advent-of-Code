@@ -4,10 +4,7 @@ import adventOfCode.domain.Day
 import adventOfCode.domain.Puzzle
 import adventOfCode.domain.RawInput
 import adventOfCode.domain.Year
-import adventOfCode.domain.asLines
 import adventOfCode.domain.asNumbers
-import adventOfCode.domain.pairs
-import adventOfCode.puzzles.year2020.day4.PassportsReader
 
 @Year(2021)
 @Day(1, 1)

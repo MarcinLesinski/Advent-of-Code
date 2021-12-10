@@ -1,8 +1,7 @@
 package adventOfCode.puzzles.year2021.day04
 
-import adventOfCode.domain.RawInput
-
 import adventOfCode.common.Matrix
+import adventOfCode.domain.RawInput
 import adventOfCode.domain.asLines
 
 class Board(

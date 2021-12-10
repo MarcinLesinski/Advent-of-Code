@@ -4,7 +4,6 @@ import adventOfCode.domain.Day
 import adventOfCode.domain.Puzzle
 import adventOfCode.domain.RawInput
 import adventOfCode.domain.Year
-import adventOfCode.domain.split
 
 @Year(2021)
 @Day(6, 1)

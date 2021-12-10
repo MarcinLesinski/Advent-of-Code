@@ -2,7 +2,11 @@ package adventOfCode.puzzles.year2020.day9
 
 import adventOfCode.common.sumsTo
 import adventOfCode.common.unique
-import adventOfCode.domain.*
+import adventOfCode.domain.Day
+import adventOfCode.domain.Puzzle
+import adventOfCode.domain.RawInput
+import adventOfCode.domain.Year
+import adventOfCode.domain.pairs
 
 @Year(2020) @Day(9, 1)
 class Part1(input: RawInput) : Puzzle<Long>(input) {

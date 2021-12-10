@@ -1,9 +1,8 @@
 package adventOfCode.puzzles.year2020
 
-import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 import java.math.BigInteger
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 internal class Day01Part2Test {
 

@@ -1,6 +1,5 @@
 package adventOfCode.puzzles.year2021.day04
 
-import adventOfCode.common.Matrix
 import adventOfCode.domain.Day
 import adventOfCode.domain.Puzzle
 import adventOfCode.domain.RawInput

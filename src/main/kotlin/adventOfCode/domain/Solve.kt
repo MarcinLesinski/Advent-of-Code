@@ -1,8 +1,11 @@
 package adventOfCode.domain
 
-import kotlin.system.measureNanoTime
-import com.importre.crayon.*
+import com.importre.crayon.bgBrightBlue
+import com.importre.crayon.bold
+import com.importre.crayon.underline
+import com.importre.crayon.yellow
 import java.text.SimpleDateFormat
+import kotlin.system.measureNanoTime
 
 fun <TResult: Any> solve(year: Int, day: Int, part: Int, block: () -> Puzzle<TResult>) {
     var result: TResult? = null

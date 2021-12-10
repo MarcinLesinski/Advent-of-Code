@@ -1,6 +1,6 @@
 package adventOfCode.puzzles.year2020.day3
 
-import adventOfCode.common.*
+import adventOfCode.common.Matrix
 
 class Slope(
     private val pattern: Matrix<Boolean>) {

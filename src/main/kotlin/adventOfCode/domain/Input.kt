@@ -1,5 +1,6 @@
 package adventOfCode.domain
 
+import adventOfCode.common.Matrix
 import adventOfCode.common.times
 import java.math.BigInteger
 
@@ -24,6 +25,19 @@ fun RawInput.asLines(): Lines{
     return this
         .trim()
         .lines()
+}
+
+inline fun <reified T> RawInput.asMatrix(separator: String = "",  convertData: (rawData:String)-> T): Matrix<T> {
+    val rawMatrix = this.asLines().map{
+        val rowOfData = if (separator == "")
+            it.map { ch -> ch.toString() }
+        else
+            it.split(separator)
+
+        rowOfData.map(convertData)
+    }
+
+    return Matrix(rawMatrix)
 }
 
 //endregion

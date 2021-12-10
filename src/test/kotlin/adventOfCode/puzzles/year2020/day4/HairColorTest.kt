@@ -1,11 +1,11 @@
 package adventOfCode.puzzles.year2020.day4
 
-import org.junit.jupiter.api.Assertions.*
+import java.util.stream.Stream
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.stream.Stream
 
 internal class HairColorTest {
 

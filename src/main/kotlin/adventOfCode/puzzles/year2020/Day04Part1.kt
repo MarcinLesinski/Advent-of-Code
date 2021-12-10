@@ -1,6 +1,9 @@
 package adventOfCode.puzzles.year2020
 
-import adventOfCode.domain.*
+import adventOfCode.domain.Day
+import adventOfCode.domain.Puzzle
+import adventOfCode.domain.RawInput
+import adventOfCode.domain.Year
 import adventOfCode.puzzles.year2020.day4.PassportsReader
 
 @Year(2020) @Day(4, 1)

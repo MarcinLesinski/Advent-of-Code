@@ -4,7 +4,6 @@ import adventOfCode.domain.Day
 import adventOfCode.domain.Puzzle
 import adventOfCode.domain.RawInput
 import adventOfCode.domain.Year
-import adventOfCode.domain.split
 import kotlin.math.absoluteValue
 
 @Year(2021)

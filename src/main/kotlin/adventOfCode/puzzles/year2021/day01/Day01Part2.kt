@@ -4,7 +4,6 @@ import adventOfCode.domain.Day
 import adventOfCode.domain.Puzzle
 import adventOfCode.domain.RawInput
 import adventOfCode.domain.Year
-import adventOfCode.domain.asLines
 import adventOfCode.domain.asNumbers
 
 @Year(2021)

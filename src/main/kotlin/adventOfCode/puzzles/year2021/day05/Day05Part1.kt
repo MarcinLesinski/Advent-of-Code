@@ -5,8 +5,6 @@ import adventOfCode.domain.Puzzle
 import adventOfCode.domain.RawInput
 import adventOfCode.domain.Year
 import adventOfCode.domain.asLines
-import kotlin.math.max
-import kotlin.math.min
 
 @Year(2021)
 @Day(5, 1)

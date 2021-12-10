@@ -1,13 +1,13 @@
 package adventOfCode.puzzles.year2020.day7
 
-import adventOfCode.puzzles.year2020.day7.dataParser.FlatModelParser
 import adventOfCode.puzzles.year2020.day7.dataParser.FlatBag
+import adventOfCode.puzzles.year2020.day7.dataParser.FlatModelParser
 import adventOfCode.puzzles.year2020.day7.dataParser.FlatSlotsForBagType
+import java.util.stream.Stream
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.stream.Stream
 
 internal class InputDataParseTests {
 

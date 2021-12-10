@@ -1,7 +1,13 @@
 package adventOfCode.puzzles.year2020
 
-import adventOfCode.common.*
-import adventOfCode.domain.*
+import adventOfCode.common.Matrix
+import adventOfCode.common.multiplyBy
+import adventOfCode.domain.BitMask
+import adventOfCode.domain.Day
+import adventOfCode.domain.Puzzle
+import adventOfCode.domain.RawInput
+import adventOfCode.domain.Year
+import adventOfCode.domain.asBitMask
 import adventOfCode.puzzles.year2020.day3.Ride
 import adventOfCode.puzzles.year2020.day3.Slope
 import adventOfCode.puzzles.year2020.day3.Trail

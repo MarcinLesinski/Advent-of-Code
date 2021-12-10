@@ -8,14 +8,13 @@ import adventOfCode.domain.asBitMask
 import adventOfCode.puzzles.year2020.day3.Ride
 import adventOfCode.puzzles.year2020.day3.Slope
 import adventOfCode.puzzles.year2020.day3.Trail
-
-import org.junit.jupiter.api.Assertions.*
+import java.util.stream.Stream
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.stream.Stream
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class Day03Part1Test {

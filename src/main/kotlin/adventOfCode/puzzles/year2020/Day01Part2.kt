@@ -1,7 +1,12 @@
 package adventOfCode.puzzles.year2020
 
 import adventOfCode.common.multiply
-import adventOfCode.domain.*
+import adventOfCode.domain.Day
+import adventOfCode.domain.Puzzle
+import adventOfCode.domain.RawInput
+import adventOfCode.domain.Year
+import adventOfCode.domain.asNumbers
+import adventOfCode.domain.forEachSubset
 import java.math.BigInteger
 
 @Year(2020) @Day(1, 2)

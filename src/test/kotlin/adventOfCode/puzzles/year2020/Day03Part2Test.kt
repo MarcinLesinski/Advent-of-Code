@@ -9,8 +9,7 @@ import adventOfCode.domain.asBitMask
 import adventOfCode.puzzles.year2020.day3.Ride
 import adventOfCode.puzzles.year2020.day3.Slope
 import adventOfCode.puzzles.year2020.day3.Trail
-
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 internal class Day03Part2Test {

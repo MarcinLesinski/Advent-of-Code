@@ -1,7 +1,5 @@
 package adventOfCode.puzzles.year2020.day4
 
-import java.lang.IllegalArgumentException
-
 class PassportBuilder {
 
     companion object {
