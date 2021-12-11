@@ -6,6 +6,7 @@ class Matrix<T>(
     private val rows: Array<Array<T>>
 ) {
     operator fun get(x: Int, y: Int): T = rows[y][x]
+    operator fun set(x: Int, y: Int, data: T) = rows[y][x] == data
 
     fun toText(): String {
         var result = ""
@@ -59,6 +60,45 @@ class Matrix<T>(
             }
         }
     }
+//
+//    inline fun <reified R> map(crossinline block: (T)->R): Matrix<R> {
+//
+//        return Matrix(this.width, this.height )
+//        val result = Matrix(this.width, this.height,  )
+//        this.forEachFieldWithCoords{data, col, row ->
+//            result[col, row] = block(data)
+//        }
+//        return result
+//    }
+
+   inline fun <reified R> mapWithCoords(noinline  block: (data:T, col:Int, row:Int)->R): Matrix<R> {
+        return Matrix(this.width, this.height){ col, row ->
+            block(this[col, row], col, row)
+        }
+    }
+
+    fun sumBy(block: (T) -> Int): Int{
+        var sum = 0
+        this.forEachField {
+            sum += block(it)
+        }
+        return sum
+    }
+
+    fun count(predicate: (T) -> Boolean ): Int {
+        var count = 0
+        forEachField {
+            if (predicate(it)) count += 1
+        }
+        return count
+    }
+
+    fun print(block: (T)-> String){
+        this.forEachRow {
+            it.forEach { print(block(it)) }
+            println()
+        }
+    }
 }
 
 inline fun <reified T> Matrix(width: Int, height: Int, initialValue: T): Matrix<T> {
@@ -66,6 +106,32 @@ inline fun <reified T> Matrix(width: Int, height: Int, initialValue: T): Matrix<
     val initRow: (Int) -> Array<T> = { i: Int -> Array(width, initCell) }
     val fields = Array(height, initRow)
     return Matrix(width, height, fields)
+}
+
+inline fun <reified T> Matrix(width: Int, height: Int, initialCell: (col:Int, row: Int) -> T): Matrix<T> {
+    val data =  mutableListOf<Array<T>>()
+    for (row in 0 until  height) {
+        val rowData = mutableListOf<T>()
+        for (col in 0 until width) {
+            rowData.add( initialCell(col, row))
+        }
+        data.add(rowData.toTypedArray())
+    }
+
+    return Matrix(width, height, data.toTypedArray())
+}
+
+inline fun <reified T> Matrix(width: Int, height: Int, initialCell: () -> T): Matrix<T> {
+    val data =  mutableListOf<Array<T>>()
+    for (row in 0 until  height) {
+        val rowData = mutableListOf<T>()
+        for (col in 0 until width) {
+            rowData.add( initialCell())
+        }
+        data.add(rowData.toTypedArray())
+    }
+
+    return Matrix(width, height, data.toTypedArray())
 }
 
 inline fun <reified T> Matrix(height: Int, noinline initRow: (Int) -> Array<T>): Matrix<T> {
