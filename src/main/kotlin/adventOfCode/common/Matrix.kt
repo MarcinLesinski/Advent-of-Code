@@ -5,9 +5,10 @@ class Matrix<T>(
     val height: Int,
     private val rows: Array<Array<T>>
 ) {
-    operator fun get(x: Int, y: Int): T = rows[y][x]
-    operator fun set(x: Int, y: Int, data: T) = rows[y][x] == data
-
+    operator fun get(col: Int, row: Int): T = rows[row][col]
+    operator fun set(col: Int, row: Int, data: T) {
+        rows[row][col] = data
+    }
     fun toText(): String {
         var result = ""
         rows.forEach {
