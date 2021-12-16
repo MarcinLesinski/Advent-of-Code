@@ -12,6 +12,6 @@ internal class Day13Part1Test {
 
         val actual = Day13Part1(input).solve()
 
-        Assertions.assertEquals(16, actual)
+        Assertions.assertEquals(17, actual)
     }
 }
