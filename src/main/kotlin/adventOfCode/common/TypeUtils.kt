@@ -66,3 +66,17 @@ inline fun Iterable<Long>.sum(): Long {
 }
 //endregion
 
+fun <T>commonItems(vararg lists: List<T>): List<T> {
+    return lists
+        .toList()
+        .fold(listOf()){acc: List<T>, ts: List<T> ->
+            if (acc.isEmpty()) return@fold ts
+            val res = mutableListOf<T>()
+            acc.forEach { a ->
+                if (ts.contains(a)) res.add(a)
+            }
+            res
+        }
+}
+
+

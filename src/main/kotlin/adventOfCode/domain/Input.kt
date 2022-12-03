@@ -21,6 +21,12 @@ fun RawInput.asNumbers(): Numbers{
         .asNumbers()
 }
 
+fun RawInput.asNumbersSections(lineSeparator: String = ""):  List<Numbers>{
+    return this.asLines().splitBy { it == lineSeparator }.map{
+        it.asNumbers()
+    }
+}
+
 fun RawInput.asLines(): Lines{
     return this
         .trim()
