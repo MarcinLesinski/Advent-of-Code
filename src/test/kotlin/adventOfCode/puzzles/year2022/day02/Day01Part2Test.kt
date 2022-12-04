@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.TestInstance
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-internal class Day03Part2Test {
+internal class Day04Part2Test {
 
     private lateinit var puzzle: Day02Part2
 

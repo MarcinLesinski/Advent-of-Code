@@ -66,10 +66,10 @@ inline fun Iterable<Long>.sum(): Long {
 }
 //endregion
 
-fun <T>commonItems(vararg lists: List<T>): List<T> {
+fun <T> commonItems(vararg lists: List<T>): List<T> {
     return lists
         .toList()
-        .fold(listOf()){acc: List<T>, ts: List<T> ->
+        .fold(listOf()) { acc: List<T>, ts: List<T> ->
             if (acc.isEmpty()) return@fold ts
             val res = mutableListOf<T>()
             acc.forEach { a ->
@@ -79,4 +79,16 @@ fun <T>commonItems(vararg lists: List<T>): List<T> {
         }
 }
 
+fun ClosedRange<Int>.fullyContains(that: ClosedRange<Int>): Boolean {
+    return ((that.start >= this.start) and (that.endInclusive <= this.endInclusive))
+}
 
+fun ClosedRange<Int>.hasCommonPartWith(that: ClosedRange<Int>): Boolean {
+    return ((this.start >= that.start) and (this.start <= that.endInclusive)) or
+
+            ((this.endInclusive >= that.start) and (this.endInclusive <= that.endInclusive)) or
+
+            ((that.start >= this.start) and (that.start <= this.endInclusive)) or
+
+            ((that.endInclusive >= this.start) and (that.endInclusive <= this.endInclusive))
+}
