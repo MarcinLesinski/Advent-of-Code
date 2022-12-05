@@ -1,5 +1,6 @@
 package adventOfCode.domain
 
+import com.importre.crayon.bgBrightBlack
 import com.importre.crayon.bgBrightBlue
 import com.importre.crayon.bold
 import com.importre.crayon.underline
@@ -29,7 +30,7 @@ private fun printReport(year: Int, day: Int, part: Int, result: Any, executionTi
     println("*** Advent of code $yearText ***")
     println("Puzzle Day $dayText - part $partText")
     println("answer is:")
-    println('\t' + result.toString().bgBrightBlue().yellow())
+    println('\t' + result.toString().bgBrightBlack().yellow())
     println()
     println("execution time: $executionTimeText")
 }

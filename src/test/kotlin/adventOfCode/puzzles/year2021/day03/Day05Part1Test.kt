@@ -3,7 +3,7 @@ package adventOfCode.puzzles.year2021.day03
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-internal class Day04Part1Test {
+internal class Day05Part1Test {
 
     @Test
     fun example() {
