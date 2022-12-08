@@ -22,5 +22,4 @@ internal class Day07Part2(input: RawInput): Puzzle<Int>(input)  {
     private val totalDiscSpace = 70_000_000
     private val updateSize = 30_000_000
 
-
 }
