@@ -18,6 +18,11 @@ class ProgramArguments(parser: ArgParser) {
             "-y", "--year",
             help = "year of advent of code - default is current year"
         ).default(currentYear())
+
+        val test by parser.flagging(
+            "-t", "--test",
+            help = "run with test data. (day\${day}.data.test)"
+        ).default(false)
 }
 
 fun currentYear(): String {

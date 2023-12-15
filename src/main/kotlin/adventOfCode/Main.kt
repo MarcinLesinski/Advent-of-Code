@@ -7,6 +7,7 @@ import adventOfCode.common.exceptionsUtil.Failure
 import adventOfCode.common.exceptionsUtil.Success
 import adventOfCode.common.exceptionsUtil.Try
 import adventOfCode.common.readRawInput
+import adventOfCode.common.readTestRawInput
 import adventOfCode.domain.Day
 import adventOfCode.domain.Puzzle
 import adventOfCode.domain.Year
@@ -23,8 +24,12 @@ fun main(args: Array<String>) {
             val day = day.toInt()
             val part = part.toInt()
             val year = year.toInt()
+            val test = test
 
-            val input = readRawInput(year, day)
+            val input = if (test)
+                    readTestRawInput(year, day)
+                else
+                    readRawInput(year, day)
 
             @Suppress("UNCHECKED_CAST")
             val puzzle: Try<Puzzle<Any>> = Try { getPuzzleCtor(year, day, part).call(input) as Puzzle<Any> }
