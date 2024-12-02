@@ -24,6 +24,11 @@ fun List<Int>.multiply(): BigInteger {
     this.forEach { result *= it }
     return result
 }
+
+/**  It return new List with removed item at given index  */
+fun <T> List<T>.withRemovedAt(index: Int): List<T> {
+    return this.filterIndexed{i, _ -> i != index }
+}
 //endregion
 
 //region List<Int>
