@@ -36,40 +36,22 @@ class Part1(input: RawInput) : Puzzle<Int>(input) {
 @Day(2, 2)
 class Part2(input: RawInput) : Puzzle<Int>(input) {
     override fun solve(): Int {
-
-        val firstStage = input.lines().asLinesOfNumbers().mapIndexed() { index, lineOfLevels ->
-            val stepsAnalysis = analiseLine(lineOfLevels)
-            IndexedStep(stepsAnalysis, index)
-        }
-        val validInFirstStage = firstStage.filter { isValid(it.steps) }
-
-        val notValid = firstStage.filter { !isValid(it.steps) }.map { it.indexedStep }
-        val secondStage = input.lines().asLinesOfNumbers().filterIndexed { index, ar ->
-            notValid.contains(index)
+        val analyzed = input.lines().asLinesOfNumbers().map{line ->
+            isValid(line) || line.indices.any{isValid(line.withRemovedAt(it)) }
         }
 
-        val allVariantsOfInvalids = secondStage.map { steps ->
-            steps.indices.map { index -> steps.withRemovedAt(index) }
-        }
-
-        val countsOfBadCombinations = allVariantsOfInvalids.map { variants ->
-            val validCount = variants.count { variant ->
-                val steps = analiseLine(variant)
-                isValid(steps)
-            }
-            validCount
-        }
-
-        val sndChanceCount = countsOfBadCombinations.count { it > 0 }
-        return validInFirstStage.count() + sndChanceCount
-
+        return analyzed.count { it }
     }
+
+}
+
+fun isValid(line: List<Int>): Boolean {
+    val steps = analiseLine(line)
+    return isLineValid(steps)
 }
 
 fun analiseLine(line: List<Int>): List<Step> {
-    return line.windowed(2, 1) {
-        val prev = it[0]
-        val next = it[1]
+    return line.zipWithNext{prev, next ->
         Step(
             distance = abs(prev - next),
             direction = Direction(prev - next)
@@ -77,17 +59,12 @@ fun analiseLine(line: List<Int>): List<Step> {
     }
 }
 
-fun isValid(steps: List<Step>): Boolean {
+fun isLineValid(steps: List<Step>): Boolean {
     val correctDistances = steps.all { it.distance in 1..3 }
     val correctTrend = steps.all { it.direction.get() == "increase" } or
             steps.all { it.direction.get() == "decrease" }
     return correctTrend and correctDistances
 }
-
-data class IndexedStep(
-    val steps: List<Step>,
-    val indexedStep: Int
-)
 
 data class Step(
     val distance: Int,
@@ -101,5 +78,5 @@ class Direction(number: Int) {
         else -> "equals"
     }
 
-    public val get = { direction }
+    val get = { direction }
 }
