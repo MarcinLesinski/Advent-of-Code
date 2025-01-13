@@ -24,8 +24,6 @@ class DataReader {
             return readRawData(fileName)
         }
 
-
-
         fun readData(fileName: String): List<String> {
             val fixedFileName = if (fileName.startsWith("/")) fileName  else "/$fileName"
             val absoluteFileName = object {}.javaClass.getResource(fixedFileName).file
